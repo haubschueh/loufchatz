@@ -1,2 +1,5 @@
 # Don't put PyCharm config online
 .idea/
+
+# Skip files that have no business on the repository
+*.docx
