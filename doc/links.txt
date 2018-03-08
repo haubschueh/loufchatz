@@ -1,0 +1,15 @@
+Excamples:
+https://www.elinux.org/Serial_port_programming
+http://www.instructables.com/id/Read-and-write-from-serial-port-with-Raspberry-Pi/
+https://pythonhosted.org/pyserial/shortintro.html#opening-serial-ports
+http://embeddedlaboratory.blogspot.ch/2017/03/serial-communication-in-raspberry-pi.html
+
+PySerial Documentation:
+http://pyserial.readthedocs.io/en/latest/shortintro.html
+
+Git repos:
+https://github.com/MaMoro/HSLU_PREN2_T37-1617
+https://github.com/krrli/PREN2
+
+Welche Pins sind /dev/ttyAMA0:
+https://de.pinout.xyz/pinout/uart
