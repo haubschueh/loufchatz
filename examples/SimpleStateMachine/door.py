@@ -1,6 +1,6 @@
 from door_states import Opened
 
-class door(object):
+class Door():
     def __init__(self):
         self.state = Opened()
 
