@@ -23,7 +23,7 @@ class FreedomInterface:
 
     def __init__(self):
         """ Virtually private constructor. """
-        if Singleton.__instance != None:
+        if FreedomInterface.__instance != None:
             raise Exception("This class is a singleton!")
         else:
             FreedomInterface.__instance = self
