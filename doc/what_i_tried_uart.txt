@@ -1,0 +1,6 @@
+import serial
+port = serial.Serial()
+port.baudrate = 19200
+port.port = '/dev/serial0'
+port.open()
+port.write(b'hello')

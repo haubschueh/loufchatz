@@ -29,3 +29,4 @@ class FreedomInterface:
             FreedomInterface.__instance = self
 
     #port = serial.Serial(port = __PORT, baudrate = __BAUDRATE, bytesize = __BYTESIZE, parity = __PARITY, stopbits = __STOPBITS)
+    
