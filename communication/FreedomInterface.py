@@ -1,4 +1,5 @@
 import serial
+from communication.Language import Commands
 
 class FreedomInterface:
     # Here will be the instance stored.
