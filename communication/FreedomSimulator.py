@@ -28,7 +28,9 @@ class FreedomSimulator:
         while True:
             received = self.__port.read()
             received += self.__port.readall()
+            printf("Received: "+received)
             if received == Commands.INIT_COMMUNICATION:
+                printf("Command understood")
                 self.__port.write(b'ok')
                 time.sleep(1)
                 self.__port.write(b'finish')
