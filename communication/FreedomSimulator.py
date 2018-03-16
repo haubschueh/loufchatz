@@ -1,5 +1,5 @@
 import serial
-from language import Language
+from Language import Commands
 import time
 
 """
@@ -28,7 +28,7 @@ class FreedomSimulator:
         while True:
             received = self.__port.read()
             received += self.__port.readall()
-            if received == Language.INIT_COMMUNICATION:
+            if received == Commands.INIT_COMMUNICATION:
                 self.__port.write(b'ok')
                 time.sleep(1)
                 self.__port.write(b'finish')
