@@ -3,10 +3,9 @@ import serial
 class FreedomInterface:
     # Here will be the instance stored.
     __instance = None
+    __port = None
 
-    """
-    Block Comment
-    """
+    # Settings for the serial port
     __PORT = '/dev/serial0'
     __BAUDRATE = 19200
     __BYTESIZE = serial.EIGHTBITS
@@ -27,6 +26,4 @@ class FreedomInterface:
             raise Exception("This class is a singleton!")
         else:
             FreedomInterface.__instance = self
-
-    #port = serial.Serial(port = __PORT, baudrate = __BAUDRATE, bytesize = __BYTESIZE, parity = __PARITY, stopbits = __STOPBITS)
-    
+            FreedomInterface.__port = serial.Serial(port=__PORT, baudrate=__BAUDRATE, bytesize=__BYTESIZE, parity=__PARITY, stopbits=__STOPBITS)
