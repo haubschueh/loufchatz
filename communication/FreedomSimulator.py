@@ -18,7 +18,7 @@ class FreedomSimulator:
     __port = None
 
     def __init__(self):
-        self.__port = serial.Serial(port=__PORT, baudrate=__BAUDRATE, bytesize=__BYTESIZE, parity=__PARITY, stopbits=__STOPBITS)
+        self.__port = serial.Serial(port=self.__PORT, baudrate=self.__BAUDRATE, bytesize=self.__BYTESIZE, parity=self.__PARITY, stopbits=self.__STOPBITS)
 
     def start(self):
         self.__port.open()
