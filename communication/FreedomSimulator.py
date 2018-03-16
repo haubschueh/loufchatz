@@ -1,5 +1,5 @@
 import serial
-from Language import Commands
+from communication.Language import Commands
 import time
 
 """
