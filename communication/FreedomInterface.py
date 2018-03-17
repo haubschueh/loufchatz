@@ -1,30 +1,34 @@
 import serial
 from communication.Language import Commands
+from communication.SerialCommunicator import SerialCommunicator
 
+"""
+This class represents the Freedom Board in our code.
+It handles the flow of each command that can be given to the Freedom Board.
+To keep the communication as simple as possible, there is no parallelism allowed.
+
+Initialisation example:
+>> frdm = FreedomInterface.getInstance()
+"""
 class FreedomInterface:
     # Here will be the instance stored.
     __instance = None
-    __port = None
-
-    # Settings for the serial port
-    __PORT = '/dev/serial0'
-    __BAUDRATE = 19200
-    __BYTESIZE = serial.EIGHTBITS
-    __PARITY = serial.PARITY_NONE
-    __STOPBITS = serial.STOPBITS_ONE
-    __TIMEOUT = 0
+    __serialCommunicator = None
 
     @staticmethod
     def getInstance():
-        """ Static access method. """
+        # Static access method.
         if FreedomInterface.__instance == None:
             FreedomInterface()
         return FreedomInterface.__instance
 
+    # This constructor would be private if he could.
     def __init__(self):
-        """ Virtually private constructor. """
         if FreedomInterface.__instance != None:
             raise Exception("This class is a singleton!")
         else:
             FreedomInterface.__instance = self
-            FreedomInterface.__port = serial.Serial(port=__PORT, baudrate=__BAUDRATE, bytesize=__BYTESIZE, parity=__PARITY, stopbits=__STOPBITS)
+            FreedomInterface.__serialCommunicator = SerialCommunicator.getInstance()
+
+    def hello(self):
+        SerialCommunicator.send(Commands.HELLO)
