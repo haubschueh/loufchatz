@@ -40,6 +40,6 @@ class SerialCommunicator:
         answer += self.__port.read(self.__port.in_waiting)
         return answer.decode(self.__ENCODING)
 
-    def transmit(self, string):
+    def transmit(self, command):
         #self.reset_input_buffer()
-        self.__port.write(string.encode(self.__ENCODING))
+        self.__port.write(command.encode(self.__ENCODING))

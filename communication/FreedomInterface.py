@@ -31,4 +31,4 @@ class FreedomInterface:
             FreedomInterface.__serialCommunicator = SerialCommunicator.getInstance()
 
     def hello(self):
-        SerialCommunicator.send(Commands.HELLO)
+        self.__serialCommunicator.transmit(Commands.HELLO)
