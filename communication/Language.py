@@ -3,7 +3,7 @@ Commands and values used for serial communication
 
 Usage example:
 >> Commands.EMERGENCY
-b'kill'
+'kill'
 """
 class Commands():
     HELLO       = 'hello'

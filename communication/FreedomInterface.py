@@ -1,4 +1,3 @@
-import serial
 from communication.Language import Commands
 from communication.SerialCommunicator import SerialCommunicator
 
@@ -44,7 +43,10 @@ class FreedomInterface:
                 break
 
     def drive(self):
-        self.__serialCommunicator.transmit(Commands.DRIVE)
+        ack = ""
+        while ack != Commands.ACKNOWLEDGE:
+            self.__serialCommunicator.transmit(Commands.DRIVE)
+            ack = self.__serialCommunicator.receive()
 
     def goto_cube(self):
         self.__serialCommunicator.transmit(Commands.GO_DISTANCE)
