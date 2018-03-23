@@ -1,4 +1,5 @@
 import serial
+from communication.Language import Commands
 
 """
 Base implementation of the serial communication
@@ -41,9 +42,9 @@ class SerialCommunicator:
             nextchar = self.__port.read().decode(self.__ENCODING)
             answer += nextchar
             lasttwo = lasttwo[1::] + nextchar
-            if lasttwo == '\n':
+            if lasttwo == Commands.END_SIGN:
                 return answer[:-1:]
 
     def transmit(self, command):
         self.__port.reset_input_buffer()
-        self.__port.write(command.encode(self.__ENCODING))
+        self.__port.write((command+Commands.END_SIGN).encode(self.__ENCODING))
