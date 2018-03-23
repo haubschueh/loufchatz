@@ -38,11 +38,11 @@ class SerialCommunicator:
     def receive(self):
         answer = lasttwo = ''
         while True:
-            nextchar = self.__port.read()
+            nextchar = self.__port.read().decode(self.__ENCODING)
             answer += nextchar
             lasttwo = lasttwo[1::] + nextchar
             if lasttwo == '\n':
-                return answer.decode(self.__ENCODING)
+                return answer[:-1:]
 
     def transmit(self, command):
         self.__port.reset_input_buffer()
