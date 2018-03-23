@@ -7,12 +7,13 @@ Usage example:
 """
 class Commands():
     HELLO       = 'hello'
-    GO_DISTANCE = 'distance'
-    LIFT_LOAD   = 'loadup'
     DRIVE       = 'drive'
     STOP        = 'stop'
+    GO_DISTANCE = 'distance'
+    LIFT_LOAD   = 'loadup'
     PUT_LOAD    = 'loaddown'
-    EMERGENCY   = 'kill'
     POSITION    = 'position'
     ACKNOWLEDGE = 'ok'
     FINISHED    = 'finish'
+    END_SIGN    = '\n'
+    EMERGENCY   = 'kill'
