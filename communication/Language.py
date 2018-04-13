@@ -6,15 +6,9 @@ Usage example:
 'kill'
 """
 class Commands():
-    HELLO       = 'hello'
-    GO_DISTANCE = 'distance'
-    LIFT_LOAD   = 'loadup'
-    PUT_LOAD    = 'loaddown'
-    ACKNOWLEDGE = 'ok'
-    EMERGENCY   = 'kill'
     END_SIGN        = '\n'
-    FRDM_START      = 'start'
-    FRDM_CUBEUP     = 'cube attached'
+    FRDM_START      = 'we go'
+    FRDM_CUBEUP     = 'raspi you go'
     POS_X           = 'x'
     POS_Z           = 'z'
     DRIVE           = 'f7'
