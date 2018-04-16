@@ -29,65 +29,20 @@ class FreedomInterface:
             FreedomInterface.__instance = self
             FreedomInterface.__serialCommunicator = SerialCommunicator.getInstance()
 
-    def __waitForAck(self):
-        ack = ""
-        while ack != Commands.ACKNOWLEDGE:
-            ack = self.__serialCommunicator.receive()
-        # while True:
-        #     ack = self.__serialCommunicator.receive()
-        #     if ack == Commands.ACKNOWLEDGE:
-        #         break
-
-    def __waitForFin(self):
-        fin = ""
-        while fin != Commands.FINISHED:
-            fin = self.__serialCommunicator.receive()
-
-    """
-    Initialize the communication and handles the start signal.
-    """
-    def hello(self):
-        self.__serialCommunicator.transmit(Commands.HELLO)
-        self.__waitForAck()
-        # wait for start signal
-        self.__waitForFin()
-
     """
     Commands to drive, stop and let the robot drive a fix distance.
     """
     def drive(self):
         self.__serialCommunicator.transmit(Commands.DRIVE)
-        #self.__waitForAck()
 
     def driveSlow(self):
         self.__serialCommunicator.transmit(Commands.DRIVE_SLOW)
-        #self.__waitForAck()
 
     def driveFast(self):
         self.__serialCommunicator.transmit(Commands.DRIVE_FAST)
-        #self.__waitForAck()
 
     def stop(self):
         self.__serialCommunicator.transmit(Commands.STOP)
-        #self.__waitForAck()
-
-    def goto_cube(self):
-        self.__serialCommunicator.transmit(Commands.GO_DISTANCE)
-        self.__waitForAck()
-        self.__waitForFin()
-
-    """
-    Commands to lift and lower the payload.
-    """
-    def lift_cube(self):
-        self.__serialCommunicator.transmit(Commands.LIFT_LOAD)
-        self.__waitForAck()
-        self.__waitForFin()
-
-    def put_cube(self):
-        self.__serialCommunicator.transmit(Commands.PUT_LOAD)
-        self.__waitForAck()
-        self.__waitForFin()
 
     """
     Gets the coordinates from the cube.
@@ -98,6 +53,11 @@ class FreedomInterface:
         self.__serialCommunicator.transmit(Commands.POS_Z)
         z = self.__serialCommunicator.receive()
         return x
+
+    def getState(self):
+        self.__serialCommunicator.transmit('state')
+        self.__serialCommunicator.receive()
+        return self.__serialCommunicator.receive()
 
     def wait(self):
         ans = ""
