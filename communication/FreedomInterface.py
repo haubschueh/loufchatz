@@ -62,7 +62,6 @@ class FreedomInterface:
 
     def getState(self):
         self.__serialCommunicator.transmit('state')
-        self.__serialCommunicator.receive()
         return self.__serialCommunicator.receive()
 
     def wait(self):
