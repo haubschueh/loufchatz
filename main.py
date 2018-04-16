@@ -9,12 +9,13 @@ import time
 
 #target_rec = TargetRec()
 #pos_out = Position()
+#__state = WaitForStartSignal()
 
 freedomBoard = FreedomInterface.getInstance()
 
 freedomBoard.wait()
 freedomBoard.cube()
-freedomBoard.driveSlow()
+freedomBoard.drive()
 time.sleep(5)
 freedomBoard.stop()
 time.sleep(.300)
