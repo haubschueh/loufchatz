@@ -14,5 +14,7 @@ class Commands():
     DRIVE           = 'f7'
     DRIVE_SLOW      = 'f3'
     DRIVE_FAST      = 'f10'
+    BACKWARD_SLOW   = 'b3'
+    BACKWARD_FAST   = 'b7'
     STOP            = 'f0'
     FINISH          = 'deliver'

@@ -30,7 +30,7 @@ class FreedomInterface:
             FreedomInterface.__serialCommunicator = SerialCommunicator.getInstance()
 
     """
-    Commands to drive, stop and let the robot drive a fix distance.
+    Commands to drive forward, drive backward and stop.
     """
     def drive(self):
         self.__serialCommunicator.transmit(Commands.DRIVE)
@@ -43,6 +43,12 @@ class FreedomInterface:
 
     def stop(self):
         self.__serialCommunicator.transmit(Commands.STOP)
+
+    def driveBackwardSlow(self):
+        self.__serialCommunicator.transmit(Commands.BACKWARD_SLOW)
+
+    def driveBackwardFast(self):
+        self.__serialCommunicator.transmit(Commands.BACKWARD_FAST)
 
     """
     Gets the coordinates from the cube.
