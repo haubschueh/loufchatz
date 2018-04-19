@@ -1,5 +1,5 @@
 # import the necessary packages
-from webcamvideostream import WebcamVideoStream
+from targetrecognition.webcamvideostream import WebcamVideoStream
 from threading import Thread
 
 class VideoStream:
