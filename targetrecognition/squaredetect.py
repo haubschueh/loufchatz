@@ -1,6 +1,6 @@
 # import the necessary packages
 #from imutils.video import VideoStream
-from videostream import VideoStream
+from targetrecognition.videostream import VideoStream
 import time
 import cv2
 import numpy as np
