@@ -1,5 +1,5 @@
-from squaredetect import SquareDetect
-from squarecheck import SquareCheck
+from targetrecognition.squaredetect import SquareDetect
+from targetrecognition.squarecheck import SquareCheck
 import cv2
 
 class TargetRec:
@@ -126,5 +126,3 @@ class TargetRec:
         b_r_y = p4
 
         return self.sc.siftCheck(t_l_x,t_l_y,b_r_x,b_r_y)
-
-
