@@ -51,7 +51,7 @@ class SquareDetect:
 
     def start_detect(self):
 
-        vs = VideoStream(usePiCamera=False,resolution=(1536,880),framerate=32).start()
+        vs = VideoStream(usePiCamera=True,resolution=(1536,880),framerate=32).start()
         time.sleep(2.0)
 
         sucess = False
