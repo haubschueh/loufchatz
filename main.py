@@ -1,4 +1,5 @@
 from communication.FreedomInterface import FreedomInterface
+from targetrecognition.targetrec import TargetRec
 import time
 #from targetrecognition.TargetRec import TargetRec
 #from position.Position import Position
@@ -12,11 +13,13 @@ import time
 #__state = WaitForStartSignal()
 
 freedomBoard = FreedomInterface.getInstance()
+targetRec = TargetRec()
 
 freedomBoard.wait()
 freedomBoard.cube()
 freedomBoard.drive()
-time.sleep(5)
+#Continues to run when the target is found
+targetRec.searchSquare()
 freedomBoard.stop()
 time.sleep(.300)
 freedomBoard.finish()
