@@ -31,7 +31,7 @@ class LoggerFactory:
             LoggerFactory.consoleHandler.setFormatter(formatter)
 
         if LoggerFactory.fileHandler == None:
-            LoggerFactory.fileHandler = logging.FileHandler(logfilePath, mode='w')
+            LoggerFactory.fileHandler = logging.FileHandler(LoggerFactory.logfilePath, mode='w')
             LoggerFactory.fileHandler.setLevel(logging.DEBUG)
             LoggerFactory.fileHandler.setFormatter(formatter)
 
