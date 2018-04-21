@@ -2,6 +2,8 @@ import logging
 import datetime as dt
 
 class LoggerFactory:
+    consoleHandler = None
+    fileHandler = None
 
     @staticmethod
     def getLogger(name):
@@ -11,16 +13,18 @@ class LoggerFactory:
         logger = logging.getLogger('simple_example')
         logger.setLevel(logging.DEBUG)
 
-        consoleHandler = logging.StreamHandler()
-        consoleHandler.setLevel(logging.DEBUG)
-        consoleHandler.setFormatter(formatter)
+        if LoggerFactory.consoleHandler == None:
+            LoggerFactory.consoleHandler = logging.StreamHandler()
+            LoggerFactory.consoleHandler.setLevel(logging.DEBUG)
+            LoggerFactory.consoleHandler.setFormatter(formatter)
 
-        fileHandler = logging.FileHandler('example.log', mode='w')
-        fileHandler.setLevel(logging.DEBUG)
-        fileHandler.setFormatter(formatter)
+        if LoggerFactory.fileHandler == None:
+            LoggerFactory.fileHandler = logging.FileHandler('example.log', mode='w')
+            LoggerFactory.fileHandler.setLevel(logging.DEBUG)
+            LoggerFactory.fileHandler.setFormatter(formatter)
 
-        logger.addHandler(consoleHandler)
-        logger.addHandler(fileHandler)
+        logger.addHandler(LoggerFactory.consoleHandler)
+        logger.addHandler(LoggerFactory.fileHandler)
         return logger
 
 class customFormatter(logging.Formatter):
