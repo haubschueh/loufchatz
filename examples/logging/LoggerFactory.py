@@ -6,12 +6,12 @@ class LoggerFactory:
     @staticmethod
     def getLogger(name):
 
-        formatter = customFormatter(format='%(asctime)s %(levelname)-8s %(name)s %(message)s', datefmt = '%Y-%m-%d,%H:%M:%S.%f')
+        formatter = customFormatter(fmt='%(asctime)s %(levelname)-8s %(name)s %(message)s', datefmt = '%Y-%m-%d,%H:%M:%S.%f')
 
         logger = logging.getLogger('simple_example')
         logger.setLevel(logging.DEBUG)
 
-        consoleHandler = logging.StreamHandler(stream=sys.stderr)
+        consoleHandler = logging.StreamHandler()
         consoleHandler.setLevel(logging.DEBUG)
         consoleHandler.setFormatter(formatter)
 
@@ -20,6 +20,7 @@ class LoggerFactory:
         fileHandler.setFormatter(formatter)
 
         logger.addHandler(consoleHandler)
+        logger.addHandler(fileHandler)
         return logger
 
 class customFormatter(logging.Formatter):
