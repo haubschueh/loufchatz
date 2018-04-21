@@ -8,7 +8,7 @@ class LoggerFactory:
     @staticmethod
     def getLogger(name):
 
-        formatter = customFormatter(fmt='%(asctime)s %(levelname)-8s %(name)s %(message)s', datefmt = '%Y-%m-%d,%H:%M:%S.%f')
+        formatter = customFormatter(fmt='%(asctime)s %(levelname)-8s %(name)s %(message)s', datefmt = None)
 
         logger = logging.getLogger('simple_example')
         logger.setLevel(logging.DEBUG)
@@ -34,6 +34,6 @@ class customFormatter(logging.Formatter):
         if datefmt:
             s = ct.strftime(datefmt)
         else:
-            t = ct.strftime("%Y-%m-%d %H:%M:%S")
-            s = "%s,%03d" % (t, record.msecs)
+            t = ct.strftime('%H:%M:%S')
+            s = '%s,%03d' % (t, record.msecs)
         return s
