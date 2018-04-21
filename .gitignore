@@ -7,3 +7,4 @@ __pycache__/
 # Skip files that have no business on the repository
 *.docx
 *.pyc
+*.log
