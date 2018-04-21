@@ -1,12 +1,14 @@
-import logging
 import fridge
 import cooker
+from LoggerFactory import LoggerFactory
 
-logging.basicConfig(filename='example.log', filemode='w', format='%(asctime)s %(levelname)s %(name)s %(message)s', datefmt='%H:%M:%S')
+log = LoggerFactory.getLogger('main')
 
+log.info('Log started.')
 fridge.first()
 cooker.first()
 fridge.second()
 cooker.second()
 cooker.third()
 fridge.third()
+log.info('Log stopped.')

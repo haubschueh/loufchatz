@@ -1,6 +1,6 @@
-import logging
+from LoggerFactory import LoggerFactory
 
-log = logging.getLogger('fridge')
+log = LoggerFactory.getLogger('fridge')
 friend = 'cooker'
 
 def first():

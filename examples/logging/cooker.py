@@ -1,6 +1,6 @@
-import logging
+from LoggerFactory import LoggerFactory
 
-log = logging.getLogger('cooker')
+log = LoggerFactory.getLogger('cooker')
 temperature = 115
 
 def first():
