@@ -57,12 +57,15 @@ class FreedomInterface:
     """
     Gets the coordinates from the cube.
     """
-    def getCubePosition(self):
+    def getCubePositionX(self):
         self.__serialCommunicator.transmit(Commands.POS_X)
         x = self.__serialCommunicator.receive()
+        return x
+
+    def getCubePositionZ(self):
         self.__serialCommunicator.transmit(Commands.POS_Z)
         z = self.__serialCommunicator.receive()
-        return x
+        return z
 
     def getState(self):
         self.__serialCommunicator.transmit('state')
