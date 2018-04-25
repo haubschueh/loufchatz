@@ -1,26 +1,23 @@
 from log.LoggerFactory import LoggerFactory
 from communication.FreedomInterface import FreedomInterface
 from targetrecognition.targetrec import TargetRec
-#from position.Position import Position
+from position.Position import PositionUpdater
 import time
 
 """
 
 """
 log = LoggerFactory.getLogger('main')
-
-#target_rec = TargetRec()
-#pos_out = Position()
-#__state = WaitForStartSignal()
-
 freedomBoard = FreedomInterface.getInstance()
 targetRec = TargetRec()
+positionUpdater = PositionUpdater()
 
 log.info('Run started.')
 freedomBoard.waitForStart()
 freedomBoard.waitForCube()
-freedomBoard.drive()
 #Continues to run when the target is found
+positionUpdater.start()
+freedomBoard.drive()
 targetRec.searchSquare()
 freedomBoard.stop()
 time.sleep(.300)
