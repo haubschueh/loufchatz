@@ -17,8 +17,8 @@ freedomBoard = FreedomInterface.getInstance()
 targetRec = TargetRec()
 
 log.info('Run started.')
-freedomBoard.wait()
-freedomBoard.cube()
+freedomBoard.waitForStart()
+freedomBoard.waitForCube()
 freedomBoard.drive()
 #Continues to run when the target is found
 targetRec.searchSquare()

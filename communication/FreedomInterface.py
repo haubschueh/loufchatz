@@ -71,14 +71,14 @@ class FreedomInterface:
         self.__serialCommunicator.transmit('state')
         return self.__serialCommunicator.receive()
 
-    def wait(self):
+    def waitForStart(self):
         self.__log.info('Waiting for the start signal')
         ans = ""
         while ans != Commands.FRDM_START:
             ans = self.__serialCommunicator.receive()
         self.__log.warning('Start signal received!')
 
-    def cube(self):
+    def waitForCube(self):
         self.__log.info('Waiting for the FRDM to takt up the cube')
         ans = ""
         while ans != Commands.FRDM_CUBEUP:
