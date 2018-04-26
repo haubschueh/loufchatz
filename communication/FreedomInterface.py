@@ -32,45 +32,8 @@ class FreedomInterface:
             FreedomInterface.__serialCommunicator = SerialCommunicator.getInstance()
 
     """
-    Commands to drive forward, drive backward and stop.
+    Language commands implementations.
     """
-    def drive(self):
-        self.__log.info('Move forward normal')
-        self.__serialCommunicator.transmit(Commands.DRIVE)
-
-    def driveSlow(self):
-        self.__serialCommunicator.transmit(Commands.DRIVE_SLOW)
-
-    def driveFast(self):
-        self.__serialCommunicator.transmit(Commands.DRIVE_FAST)
-
-    def stop(self):
-        self.__log.info('Stop driving')
-        self.__serialCommunicator.transmit(Commands.STOP)
-
-    def driveBackwardSlow(self):
-        self.__serialCommunicator.transmit(Commands.BACKWARD_SLOW)
-
-    def driveBackwardFast(self):
-        self.__serialCommunicator.transmit(Commands.BACKWARD_FAST)
-
-    """
-    Gets the coordinates from the cube.
-    """
-    def getCubePositionX(self):
-        self.__serialCommunicator.transmit(Commands.POS_X)
-        x = self.__serialCommunicator.receive()
-        return x
-
-    def getCubePositionZ(self):
-        self.__serialCommunicator.transmit(Commands.POS_Z)
-        z = self.__serialCommunicator.receive()
-        return z
-
-    def getState(self):
-        self.__serialCommunicator.transmit('state')
-        return self.__serialCommunicator.receive()
-
     def waitForStart(self):
         self.__log.info('Waiting for the start signal')
         ans = ""
@@ -88,3 +51,63 @@ class FreedomInterface:
     def finish(self):
         self.__log.warning('Put the cube down and finish the parcours.')
         self.__serialCommunicator.transmit(Commands.FINISH)
+
+    def getCubePositionX(self):
+        self.__serialCommunicator.transmit(Commands.POS_X)
+        x = self.__serialCommunicator.receive()
+        return x
+
+    def getCubePositionZ(self):
+        self.__serialCommunicator.transmit(Commands.POS_Z)
+        z = self.__serialCommunicator.receive()
+        return z
+
+    def getState(self):
+        self.__serialCommunicator.transmit(Commands.STATE)
+        return self.__serialCommunicator.receive()
+
+    def drive(self):
+        self.__log.info('Move forward normal')
+        self.__serialCommunicator.transmit(Commands.FORWARD)
+
+    def driveSlow(self):
+        self.__serialCommunicator.transmit(Commands.FORWARD_SLOW)
+
+    def driveFast(self):
+        self.__serialCommunicator.transmit(Commands.FORWARD_FAST)
+
+    def driveBackward(self):
+        self.__serialCommunicator.transmit(Commands.BACKWARD)
+
+    def driveBackwardSlow(self):
+        self.__serialCommunicator.transmit(Commands.BACKWARD_SLOW)
+
+    def driveBackwardFast(self):
+        self.__serialCommunicator.transmit(Commands.BACKWARD_FAST)
+
+    def stop(self):
+        self.__log.info('Stop driving')
+        self.__serialCommunicator.transmit(Commands.STOP)
+
+    def hopperUp(self):
+        self.__log.info('Move forward normal')
+        self.__serialCommunicator.transmit(Commands.HOPPER_UP)
+
+    def hopperDown(self):
+        self.__serialCommunicator.transmit(Commands.HOPPER_DOWN)
+
+    def hopperStop(self):
+        self.__serialCommunicator.transmit(Commands.HOPPER_STOP)
+
+    def attachCube(self):
+        self.__serialCommunicator.transmit(Commands.ATTACH_CUBE)
+
+    def releaseCube(self):
+        self.__serialCommunicator.transmit(Commands.RELEASE_CUBE)
+
+    """
+    Debug commands.
+    """
+    def reset(self):
+        self.__serialCommunicator.transmit(Commands.RESET)
+        return self.__serialCommunicator.receive()
