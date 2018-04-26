@@ -1,7 +1,7 @@
 from log.LoggerFactory import LoggerFactory
 from communication.FreedomInterface import FreedomInterface
 from targetrecognition.targetrec import TargetRec
-from position.Position import PositionUpdater
+from position.position import PositionUpdater
 import time
 
 """
