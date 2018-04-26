@@ -8,21 +8,21 @@ import threading
 """
 
 class PositionUpdater(threading.Thread):
+    log = LoggerFactory.getLogger('Position')
+    freedomBoard = FreedomInterface.getInstance()
+    alive = False
 
     def __init__(self):
         threading.Thread.__init__(self)
-        log = LoggerFactory.getLogger('Position')
-        freedomBoard = FreedomInterface.getInstance()
-        alive = False
 
     def run(self):
-        while(alive):
-            x = freedomBoard.getCubePositionX()
-            z = freedomBoard.getCubePositionZ()
-            log.info('CubePosition is: X=%i, Z=%i', x, z)
-            s = freedomBoard.getState()
-            log.info('Freedom State is: X=%i', s)
+        while(self.alive):
+            x = self.freedomBoard.getCubePositionX()
+            z = self.freedomBoard.getCubePositionZ()
+            self.log.info('CubePosition is: X=%i, Z=%i', x, z)
+            s = self.freedomBoard.getState()
+            self.log.info('Freedom State is: X=%i', s)
             time.sleep(1)
 
     def stop(self):
-        alive = False
+        self.alive = False
