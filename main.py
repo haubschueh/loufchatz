@@ -10,7 +10,7 @@ import time
 log = LoggerFactory.getLogger('main')
 freedomBoard = FreedomInterface.getInstance()
 targetRec = TargetRec()
-positionUpdater = PositionUpdater(LoggerFactory.getLogger('main'), freedomBoard)
+positionUpdater = PositionUpdater(LoggerFactory.getLogger('Position'), freedomBoard)
 
 log.info('Run started.')
 freedomBoard.waitForStart()
@@ -18,7 +18,7 @@ freedomBoard.waitForCube()
 #Continues to run when the target is found
 positionUpdater.start()
 freedomBoard.drive()
-targetRec.searchSquare()
+#targetRec.searchSquare()
 freedomBoard.stop()
 positionUpdater.stop()
 time.sleep(.300)
