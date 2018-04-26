@@ -1,5 +1,5 @@
-from log.LoggerFactory import LoggerFactory
-from communication.FreedomInterface import FreedomInterface
+#from log.LoggerFactory import LoggerFactory
+#from communication.FreedomInterface import FreedomInterface
 import time
 import threading
 
@@ -8,12 +8,14 @@ import threading
 """
 
 class PositionUpdater(threading.Thread):
-    log = LoggerFactory.getLogger('Position')
-    freedomBoard = FreedomInterface.getInstance()
+    #log = LoggerFactory.getLogger('Position')
+    #freedomBoard = FreedomInterface.getInstance()
     alive = False
 
-    def __init__(self):
+    def __init__(self, logger, frdm):
         threading.Thread.__init__(self)
+        self.log = logger
+        self.freedomBoard = frdm
 
     def run(self):
         while(self.alive):

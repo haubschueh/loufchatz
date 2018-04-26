@@ -10,7 +10,7 @@ import time
 log = LoggerFactory.getLogger('main')
 freedomBoard = FreedomInterface.getInstance()
 targetRec = TargetRec()
-positionUpdater = PositionUpdater()
+positionUpdater = PositionUpdater(LoggerFactory.getLogger('main'), freedomBoard)
 
 log.info('Run started.')
 freedomBoard.waitForStart()
