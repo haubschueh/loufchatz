@@ -2,8 +2,8 @@
 Commands and values used for serial communication
 
 Usage example:
->> Commands.EMERGENCY
-'kill'
+>> Commands.ATTACH_CUBE
+'attach'
 """
 class Commands():
     END_SIGN        = '\n'
