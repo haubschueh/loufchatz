@@ -20,7 +20,7 @@ class SquareDetect:
         #Var
 
         #Parameter min and max square area
-        self.cntMax = 100000
+        self.cntMax = 1000000
         self.cntMin = 1000
         self.approxSq = 0.01
 
@@ -32,9 +32,10 @@ class SquareDetect:
         squares = []
 
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
         img = cv2.GaussianBlur(img, (5, 5), 0)
 
-        bin = cv2.Canny(img, 150, 200)
+        ret, bin = cv2.threshold(img, 100, 255, cv2.THRESH_BINARY)
 
         bin, contours, _hierarchy = cv2.findContours(bin, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
         for cnt in contours:
@@ -51,7 +52,7 @@ class SquareDetect:
 
     def start_detect(self):
 
-        vs = VideoStream(usePiCamera=False,resolution=(1536,880),framerate=32).start()
+        vs = VideoStream(usePiCamera=False,resolution=(1280,720),framerate=21).start()
         time.sleep(2.0)
 
         sucess = False
