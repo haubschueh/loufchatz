@@ -1,6 +1,10 @@
 # Don't put PyCharm config online
 .idea/
 
+# Skip python cache folder
+__pycache__/
+
 # Skip files that have no business on the repository
 *.docx
 *.pyc
+*.log

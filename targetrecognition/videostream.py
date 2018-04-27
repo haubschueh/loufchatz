@@ -1,5 +1,5 @@
 # import the necessary packages
-from webcamvideostream import WebcamVideoStream
+from targetrecognition.webcamvideostream import WebcamVideoStream
 from threading import Thread
 
 class VideoStream:
@@ -11,7 +11,7 @@ class VideoStream:
 			# explicity told to do so -- this helps remove the
 			# requirement of `picamera[array]` from desktops or
 			# laptops that still want to use the `imutils` package
-			from pivideostream import PiVideoStream
+			from targetrecognition.pivideostream import PiVideoStream
 
 			# initialize the picamera stream and allow the camera
 			# sensor to warmup

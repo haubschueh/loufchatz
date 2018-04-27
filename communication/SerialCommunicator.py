@@ -1,3 +1,4 @@
+from log.LoggerFactory import LoggerFactory
 import serial
 from communication.Language import Commands
 
@@ -12,6 +13,7 @@ class SerialCommunicator:
     __instance = None
     __port = None
     __ENCODING = 'utf-8'
+    __log = LoggerFactory.getLogger('SerialCommunicator')
 
     # Settings for the serial port
     __PORT = '/dev/serial0'
@@ -43,8 +45,10 @@ class SerialCommunicator:
             answer += nextchar
             lasttwo = lasttwo[1::] + nextchar
             if lasttwo == Commands.END_SIGN:
+                self.__log.debug('Received \'%s\'', answer[:-1:])
                 return answer[:-1:]
 
     def transmit(self, command):
         self.__port.reset_input_buffer()
         self.__port.write((command+Commands.END_SIGN).encode(self.__ENCODING))
+        self.__log.debug('Sent \'%s\'', command)

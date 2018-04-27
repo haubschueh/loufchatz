@@ -1,6 +1,6 @@
 # import the necessary packages
 #from imutils.video import VideoStream
-from videostream import VideoStream
+from targetrecognition.videostream import VideoStream
 import time
 import cv2
 import numpy as np
@@ -52,7 +52,11 @@ class SquareDetect:
 
     def start_detect(self):
 
+<<<<<<< HEAD:targetrecognition/TargetRec/squaredetect.py
         vs = VideoStream(usePiCamera=False,resolution=(1280,720),framerate=21).start()
+=======
+        vs = VideoStream(usePiCamera=True,resolution=(1536,880),framerate=32).start()
+>>>>>>> 15973073b56b37838ec88b99c66948208668464c:targetrecognition/squaredetect.py
         time.sleep(2.0)
 
         sucess = False
@@ -70,8 +74,8 @@ class SquareDetect:
 
             # Speed Test
             count += 1
-            print("new Frame")
-            print(count)
+            #print("new Frame")
+            #print(count)
 
             # If Target found Break - TBD
             if sucess or cv2.waitKey(1) == 13:  # 13 is the Enter Key
