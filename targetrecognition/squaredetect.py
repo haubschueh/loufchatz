@@ -21,7 +21,7 @@ class SquareDetect:
 
         #Parameter min and max square area
         self.cntMax = 1000000
-        self.cntMin = 1000
+        self.cntMin = 100
         self.approxSq = 0.01
 
     def angle_cos(self,p0, p1, p2):
