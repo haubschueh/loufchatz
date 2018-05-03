@@ -17,7 +17,7 @@ class SquareDetect:
 
     def __init__(self):
 
-        self.videoStream = VideoStream(usePiCamera=True,resolution=(1280,720),framerate=21).start()
+        #Var
 
         #Parameter min and max square area
         self.cntMax = 1000000
@@ -51,14 +51,14 @@ class SquareDetect:
         return squares
 
     def start_detect(self):
-        self.videoStream = VideoStream(usePiCamera=True,resolution=(1280,720),framerate=21).start()
+        vs = VideoStream(usePiCamera=True,resolution=(1280,720),framerate=21).start()
         time.sleep(2.0)
 
         sucess = False
         count = 0
 
         while True:
-            frame = self.videoStream.read()
+            frame = vs.read()
             squares = self.find_squares(frame)
 
             # Check contour count in parrent contour
@@ -77,6 +77,6 @@ class SquareDetect:
                 break
 
         # Release camera
-        self.videoStream.stop()
+        vs.stop()
 
         return frame, squares
