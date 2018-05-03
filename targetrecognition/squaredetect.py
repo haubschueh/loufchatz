@@ -70,7 +70,7 @@ class SquareDetect:
             # Speed Test
             count += 1
             #print("new Frame")
-            #print(count)
+            print(count)
 
             # If Target found Break - TBD
             if sucess or cv2.waitKey(1) == 13:  # 13 is the Enter Key
