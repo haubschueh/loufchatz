@@ -1,6 +1,5 @@
 from targetrecognition.squaredetect import SquareDetect
 from targetrecognition.squarecheck import SquareCheck
-from targetrecognition.videostream import VideoStream
 import cv2
 
 class TargetRec:
@@ -11,11 +10,10 @@ class TargetRec:
         self.sc = SquareCheck()
         self.target = 0
         self.last_frame = 0
-        self.videoStream = VideoStream(usePiCamera=True,resolution=(1280,720),framerate=21).start()
 
     def searchSquare(self):
 
-        frame, squares = self.sd.start_detect(self.videoStream)
+        frame, squares = self.sd.start_detect()
         sorted_squares = sorted(squares, key=cv2.contourArea, reverse=False)
         self.target = sorted_squares
         self.last_frame = frame
