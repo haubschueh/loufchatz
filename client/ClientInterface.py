@@ -1,4 +1,4 @@
-from client.PyroFreedomInterfaceFacade import PyroFacade
+from client.PyroFacade import PyroFacade
 import threading
 import Pyro4
 
