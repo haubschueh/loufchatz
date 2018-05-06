@@ -1,6 +1,7 @@
 from log.LoggerFactory import LoggerFactory
 from communication.Language import Commands
 from communication.SerialCommunicator import SerialCommunicator
+import Pyro4
 
 """
 This class represents the Freedom Board in our code.
