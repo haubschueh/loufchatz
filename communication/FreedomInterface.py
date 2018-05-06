@@ -1,7 +1,6 @@
 from log.LoggerFactory import LoggerFactory
 from communication.Language import Commands
 from communication.SerialCommunicator import SerialCommunicator
-import Pyro4
 
 """
 This class represents the Freedom Board in our code.
@@ -31,10 +30,6 @@ class FreedomInterface:
         else:
             FreedomInterface.__instance = self
             FreedomInterface.__serialCommunicator = SerialCommunicator.getInstance()
-        daemon = Pyro4.Daemon(host="192.168.10.8", port=34383)
-        uri = daemon.register(FreedomInterface)
-        self.__log.info("Pyro ready. Object uri = %s", uri)
-        daemon.requestLoop()
 
     """
     Language commands implementations.
