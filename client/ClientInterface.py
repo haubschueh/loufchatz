@@ -1,5 +1,6 @@
 from client.PyroFreedomInterfaceFacade import PyroFacade
 import threading
+import Pyro4
 
 """
 
