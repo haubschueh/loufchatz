@@ -15,7 +15,7 @@ class ClientInterface(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
         pyroFacade = PyroFacade()
-        self.daemon = Pyro4.Daemon(host=__IP, port=__PORT)
+        self.daemon = Pyro4.Daemon(host=self.__IP, port=self.__PORT)
         self.pyroUri = self.daemon.register(pyroFacade)
 
     def run(self):
