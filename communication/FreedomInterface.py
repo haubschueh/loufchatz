@@ -33,7 +33,7 @@ class FreedomInterface:
             FreedomInterface.__serialCommunicator = SerialCommunicator.getInstance()
         daemon = Pyro4.Daemon(host="192.168.10.8", port=34383)
         uri = daemon.register(FreedomInterface)
-        self.__log.info("Pyro ready. Object uri =", uri)
+        self.__log.info("Pyro ready. Object uri = %s", uri)
         daemon.requestLoop()
 
     """
