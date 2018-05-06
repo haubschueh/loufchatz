@@ -2,7 +2,7 @@ from communication.FreedomInterface import FreedomInterface
 import Pyro4
 
 class PyroFacade:
-        __FreedomInterface = None
+    self.__FreedomInterface = None
 
     def __init__(self):
         self.__FreedomInterface = FreedomInterface.getInstance()
