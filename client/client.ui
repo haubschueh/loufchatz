@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="tk.Frame" id="window">
+    <property name="cursor">arrow</property>
+    <property name="height">200</property>
+    <property name="width">200</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="tk.Frame" id="PositionDisplay">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+        <child>
+          <object class="tk.Text" id="PosX">
+            <property name="autoseparators">false</property>
+            <property name="font">TkDefaultFont</property>
+            <property name="height">8</property>
+            <property name="insertofftime">100</property>
+            <property name="maxundo">0</property>
+            <property name="padx">0</property>
+            <property name="state">disabled</property>
+            <property name="text" translatable="yes">000</property>
+            <property name="width">40</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">20</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Text" id="PosZ">
+            <property name="autoseparators">false</property>
+            <property name="font">TkDefaultFont</property>
+            <property name="height">8</property>
+            <property name="insertofftime">100</property>
+            <property name="maxundo">0</property>
+            <property name="padx">0</property>
+            <property name="state">disabled</property>
+            <property name="text" translatable="yes">000</property>
+            <property name="width">40</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">20</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="PositionDisplayLabel">
+            <property name="cursor">arrow</property>
+            <property name="font">TkDefaultFont</property>
+            <property name="text" translatable="yes">PositionDisplay</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="DriveControl">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+        <child>
+          <object class="tk.Button" id="BackwardFast">
+            <property name="cursor">hand2</property>
+            <property name="image">left3.gif</property>
+            <property name="text" translatable="yes">Button_1</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="Backward">
+            <property name="cursor">hand2</property>
+            <property name="image">left2.gif</property>
+            <property name="text" translatable="yes">Button_2</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="BackwardSlow">
+            <property name="cursor">hand2</property>
+            <property name="image">left1.gif</property>
+            <property name="text" translatable="yes">Button_3</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="Stop">
+            <property name="cursor">hand2</property>
+            <property name="image">stop.gif</property>
+            <property name="text" translatable="yes">Button_4</property>
+            <layout>
+              <property name="column">3</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="ForwardSlow">
+            <property name="cursor">hand2</property>
+            <property name="image">right1.gif</property>
+            <property name="text" translatable="yes">Button_5</property>
+            <layout>
+              <property name="column">4</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="Forward">
+            <property name="cursor">hand2</property>
+            <property name="image">right2.gif</property>
+            <property name="text" translatable="yes">Button_6</property>
+            <layout>
+              <property name="column">5</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="ForwardFast">
+            <property name="cursor">hand2</property>
+            <property name="image">right3.gif</property>
+            <property name="text" translatable="yes">Button_7</property>
+            <layout>
+              <property name="column">6</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="DriveControlLabel">
+            <property name="font">TkDefaultFont</property>
+            <property name="text" translatable="yes">DriveControl</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="columnspan">7</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="HopperControl">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+        <child>
+          <object class="tk.Button" id="HopperDown">
+            <property name="cursor">hand2</property>
+            <property name="image">arrowdown.gif</property>
+            <property name="text" translatable="yes">Button_8</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="HopperStop">
+            <property name="cursor">hand2</property>
+            <property name="image">stop.gif</property>
+            <property name="text" translatable="yes">Button_9</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="HopperUp">
+            <property name="cursor">hand2</property>
+            <property name="image">arrowup.gif</property>
+            <property name="text" translatable="yes">Button_10</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="AttachCube">
+            <property name="cursor">hand2</property>
+            <property name="image">hookclose.gif</property>
+            <property name="text" translatable="yes">Button_11</property>
+            <layout>
+              <property name="column">3</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="ReleaseCube">
+            <property name="cursor">hand2</property>
+            <property name="image">hookopen.gif</property>
+            <property name="text" translatable="yes">Button_12</property>
+            <layout>
+              <property name="column">4</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="HopperControlLabel">
+            <property name="compound">top</property>
+            <property name="cursor">based_arrow_down</property>
+            <property name="font">TkDefaultFont</property>
+            <property name="text" translatable="yes">HopperControl</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="columnspan">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="SystemControl">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+        <child>
+          <object class="tk.Button" id="State">
+            <property name="cursor">hand2</property>
+            <property name="image">state.gif</property>
+            <property name="text" translatable="yes">Button_13</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="Reset">
+            <property name="cursor">hand2</property>
+            <property name="image">reset.gif</property>
+            <property name="text" translatable="yes">Button_14</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="SystemControlLabel">
+            <property name="anchor">w</property>
+            <property name="cursor">arrow</property>
+            <property name="font">TkDefaultFont</property>
+            <property name="pady">0</property>
+            <property name="text" translatable="yes">SystemControl</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
