@@ -1,9 +1,13 @@
 import tkinter as tk
 import pygubu
 import os
+import Pyro4
 
 class Application:
     def __init__(self, master):
+        pyroUri = input("Enter Pyro uri: ").strip()
+        loufchatz = Pyro4.Proxy(pyroUri)
+
         self.builder = builder = pygubu.Builder()
         builder.add_from_file('client.ui')
 
