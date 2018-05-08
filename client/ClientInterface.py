@@ -1,6 +1,7 @@
 from client.PyroFacade import PyroFacade
 import threading
 import Pyro4
+import os
 
 """
 
@@ -8,7 +9,7 @@ import Pyro4
 class ClientInterface(threading.Thread):
 
     __daemon = None
-    __IP = "192.168.10.8"
+    __IP = os.popen('ip addr show wlan0').read().split("inet ")[1].split("/")[0]
     __PORT = 34383
     __pyroUri = ""
 
