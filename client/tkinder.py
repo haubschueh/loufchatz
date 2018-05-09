@@ -55,8 +55,7 @@ class Application:
         self.loufchatz.releaseCube()
 
     def on_State_clicked(self):
-        #Do nothing at this state
-        #self.loufchatz.getState()
+        self.loufchatz.getState()
 
     def on_Reset_clicked(self):
         self.loufchatz.reset()
