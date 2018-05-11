@@ -1,7 +1,6 @@
 from log.LoggerFactory import LoggerFactory
 from communication.FreedomInterface import FreedomInterface
 from targetrecognition.targetrec import TargetRec
-#from position.position import PositionUpdater
 from client.ClientInterface import ClientInterface
 import time
 
@@ -11,13 +10,12 @@ import time
 log = LoggerFactory.getLogger('main')
 freedomBoard = FreedomInterface.getInstance()
 targetRec = TargetRec()
-#positionUpdater = PositionUpdater(LoggerFactory.getLogger('Position'), freedomBoard)
-clientInterface = ClientInterface()
-uri = clientInterface.getUri()
-clientInterface.start()
+#clientInterface = ClientInterface()
+#uri = clientInterface.getUri()
+#clientInterface.start()
 
 log.info('Run started.')
-log.info('Client uri is: %s', uri)
+#log.info('Client uri is: %s', uri)
 freedomBoard.waitForStart()
 freedomBoard.waitForCube()
 freedomBoard.drive()
