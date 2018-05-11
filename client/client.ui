@@ -2,8 +2,8 @@
 <interface>
   <object class="tk.Frame" id="window">
     <property name="cursor">arrow</property>
-    <property name="height">200</property>
-    <property name="width">200</property>
+    <property name="padx">20</property>
+    <property name="pady">20</property>
     <layout>
       <property name="column">0</property>
       <property name="propagate">True</property>
@@ -11,8 +11,6 @@
     </layout>
     <child>
       <object class="tk.Frame" id="PositionDisplay">
-        <property name="height">200</property>
-        <property name="width">200</property>
         <layout>
           <property name="column">0</property>
           <property name="columnspan">2</property>
@@ -22,17 +20,17 @@
         <child>
           <object class="tk.Text" id="PosX">
             <property name="autoseparators">false</property>
-            <property name="font">TkDefaultFont</property>
-            <property name="height">8</property>
+            <property name="font">{TkDefaultFont} 72</property>
+            <property name="height">1</property>
             <property name="insertofftime">100</property>
             <property name="maxundo">0</property>
-            <property name="padx">0</property>
             <property name="state">disabled</property>
             <property name="text" translatable="yes">000</property>
-            <property name="width">40</property>
+            <property name="width">3</property>
             <layout>
-              <property name="column">0</property>
-              <property name="padx">20</property>
+              <property name="column">2</property>
+              <property name="padx">10</property>
+              <property name="pady">10</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
             </layout>
@@ -41,19 +39,19 @@
         <child>
           <object class="tk.Text" id="PosZ">
             <property name="autoseparators">false</property>
-            <property name="font">TkDefaultFont</property>
-            <property name="height">8</property>
+            <property name="font">{TkDefaultFont} 72</property>
+            <property name="height">1</property>
             <property name="insertofftime">100</property>
             <property name="maxundo">0</property>
-            <property name="padx">0</property>
             <property name="state">disabled</property>
             <property name="text" translatable="yes">000</property>
-            <property name="width">40</property>
+            <property name="width">3</property>
             <layout>
-              <property name="column">1</property>
-              <property name="padx">20</property>
+              <property name="column">2</property>
+              <property name="padx">10</property>
+              <property name="pady">10</property>
               <property name="propagate">True</property>
-              <property name="row">1</property>
+              <property name="row">2</property>
             </layout>
           </object>
         </child>
@@ -62,9 +60,53 @@
             <property name="text" translatable="yes">PositionDisplay</property>
             <layout>
               <property name="column">0</property>
-              <property name="columnspan">2</property>
+              <property name="columnspan">6</property>
               <property name="propagate">True</property>
               <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="PosXLabel">
+            <property name="font">{TkDefaultFont} 48</property>
+            <property name="text" translatable="yes">X:</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="PosZLabel">
+            <property name="font">{TkDefaultFont} 48</property>
+            <property name="text" translatable="yes">Z:</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="CmXLabel">
+            <property name="font">{TkDefaultFont} 48</property>
+            <property name="text" translatable="yes">cm</property>
+            <layout>
+              <property name="column">3</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="CmZLabel">
+            <property name="font">{TkDefaultFont} 48</property>
+            <property name="text" translatable="yes">cm</property>
+            <layout>
+              <property name="column">3</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
             </layout>
           </object>
         </child>
@@ -72,8 +114,6 @@
     </child>
     <child>
       <object class="tk.Frame" id="DriveControl">
-        <property name="height">200</property>
-        <property name="width">200</property>
         <layout>
           <property name="column">0</property>
           <property name="columnspan">2</property>
@@ -82,9 +122,9 @@
         </layout>
         <child>
           <object class="tk.Button" id="BackwardFast">
+            <property name="command">on_BackwardFast_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">left3.gif</property>
-            <property name="command">on_BackwardFast_clicked</property>
             <layout>
               <property name="column">0</property>
               <property name="padx">5</property>
@@ -95,9 +135,9 @@
         </child>
         <child>
           <object class="tk.Button" id="Backward">
+            <property name="command">on_Backward_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">left2.gif</property>
-            <property name="command">on_Backward_clicked</property>
             <layout>
               <property name="column">1</property>
               <property name="padx">5</property>
@@ -108,9 +148,9 @@
         </child>
         <child>
           <object class="tk.Button" id="BackwardSlow">
+            <property name="command">on_BackwardSlow_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">left1.gif</property>
-            <property name="command">on_BackwardSlow_clicked</property>
             <layout>
               <property name="column">2</property>
               <property name="padx">5</property>
@@ -121,9 +161,9 @@
         </child>
         <child>
           <object class="tk.Button" id="Stop">
+            <property name="command">on_Stop_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">stop.gif</property>
-            <property name="command">on_Stop_clicked</property>
             <layout>
               <property name="column">3</property>
               <property name="padx">5</property>
@@ -134,9 +174,9 @@
         </child>
         <child>
           <object class="tk.Button" id="ForwardSlow">
+            <property name="command">on_ForwardSlow_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">right1.gif</property>
-            <property name="command">on_ForwardSlow_clicked</property>
             <layout>
               <property name="column">4</property>
               <property name="padx">5</property>
@@ -147,9 +187,9 @@
         </child>
         <child>
           <object class="tk.Button" id="Forward">
+            <property name="command">on_Forward_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">right2.gif</property>
-            <property name="command">on_Forward_clicked</property>
             <layout>
               <property name="column">5</property>
               <property name="padx">5</property>
@@ -160,9 +200,9 @@
         </child>
         <child>
           <object class="tk.Button" id="ForwardFast">
+            <property name="command">on_ForwardFast_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">right3.gif</property>
-            <property name="command">on_ForwardFast_clicked</property>
             <layout>
               <property name="column">6</property>
               <property name="padx">5</property>
@@ -186,8 +226,6 @@
     </child>
     <child>
       <object class="tk.Frame" id="HopperControl">
-        <property name="height">200</property>
-        <property name="width">200</property>
         <layout>
           <property name="column">0</property>
           <property name="propagate">True</property>
@@ -195,9 +233,9 @@
         </layout>
         <child>
           <object class="tk.Button" id="HopperDown">
+            <property name="command">on_HopperDown_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">arrowdown.gif</property>
-            <property name="command">on_HopperDown_clicked</property>
             <layout>
               <property name="column">0</property>
               <property name="padx">5</property>
@@ -208,9 +246,9 @@
         </child>
         <child>
           <object class="tk.Button" id="HopperStop">
+            <property name="command">on_HopperStop_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">stop.gif</property>
-            <property name="command">on_HopperStop_clicked</property>
             <layout>
               <property name="column">1</property>
               <property name="padx">5</property>
@@ -221,9 +259,9 @@
         </child>
         <child>
           <object class="tk.Button" id="HopperUp">
+            <property name="command">on_HopperUp_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">arrowup.gif</property>
-            <property name="command">on_HopperUp_clicked</property>
             <layout>
               <property name="column">2</property>
               <property name="padx">5</property>
@@ -234,9 +272,9 @@
         </child>
         <child>
           <object class="tk.Button" id="AttachCube">
+            <property name="command">on_AttachCube_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">hookclose.gif</property>
-            <property name="command">on_AttachCube_clicked</property>
             <layout>
               <property name="column">3</property>
               <property name="padx">5</property>
@@ -247,9 +285,9 @@
         </child>
         <child>
           <object class="tk.Button" id="ReleaseCube">
+            <property name="command">on_ReleaseCube_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">hookopen.gif</property>
-            <property name="command">on_ReleaseCube_clicked</property>
             <layout>
               <property name="column">4</property>
               <property name="padx">5</property>
@@ -273,8 +311,6 @@
     </child>
     <child>
       <object class="tk.Frame" id="SystemControl">
-        <property name="height">200</property>
-        <property name="width">200</property>
         <layout>
           <property name="column">1</property>
           <property name="propagate">True</property>
@@ -282,9 +318,9 @@
         </layout>
         <child>
           <object class="tk.Button" id="State">
+            <property name="command">on_State_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">state.gif</property>
-            <property name="command">on_State_clicked</property>
             <layout>
               <property name="column">0</property>
               <property name="padx">5</property>
@@ -295,9 +331,9 @@
         </child>
         <child>
           <object class="tk.Button" id="Reset">
+            <property name="command">on_Reset_clicked</property>
             <property name="cursor">hand2</property>
             <property name="image">reset.gif</property>
-            <property name="command">on_Reset_clicked</property>
             <layout>
               <property name="column">1</property>
               <property name="padx">5</property>
