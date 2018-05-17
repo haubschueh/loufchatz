@@ -35,7 +35,7 @@ class SquareDetect:
 
         img = cv2.GaussianBlur(img, (5, 5), 0)
 
-        ret, bin = cv2.threshold(img, 100, 255, cv2.THRESH_BINARY)
+        ret, bin = cv2.threshold(img, 100, 255, cv2.THRESH_OTSU)
 
         bin, contours, _hierarchy = cv2.findContours(bin, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
         for cnt in contours:
