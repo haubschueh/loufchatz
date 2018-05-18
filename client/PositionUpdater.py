@@ -12,4 +12,4 @@ class PositionUpdater(threading.Thread):
             x = self.loufchatz.getCubePositionX()
             z = self.loufchatz.getCubePositionZ()
             self.gui.updatePosition(x, z)
-            time.sleep(.500)
+            time.sleep(.250)
