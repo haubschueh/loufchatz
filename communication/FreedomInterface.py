@@ -37,7 +37,7 @@ class FreedomInterface:
     """
     def waitForStart(self):
         self.__log.info('Waiting for the start signal')
-        self.__positionUpdatingEnabled = False
+        __positionUpdatingEnabled = False
         ans = ""
         while ans != Commands.FRDM_START:
             ans = self.__serialCommunicator.receive()
@@ -48,7 +48,7 @@ class FreedomInterface:
         ans = ""
         while ans != Commands.FRDM_CUBEUP:
             ans = self.__serialCommunicator.receive()
-        self.__positionUpdatingEnabled = True
+        __positionUpdatingEnabled = True
         self.__log.warning('Cube taken up. Raspi overtakes the control.')
 
     def finish(self):
@@ -56,7 +56,7 @@ class FreedomInterface:
         self.__serialCommunicator.transmit(Commands.FINISH)
 
     def getCubePositionX(self):
-        if self.__positionUpdatingEnabled:
+        if __positionUpdatingEnabled:
             self.__serialCommunicator.transmit(Commands.POS_X)
             x = self.__serialCommunicator.receive()
             return x
@@ -64,7 +64,7 @@ class FreedomInterface:
             return -1
 
     def getCubePositionZ(self):
-        if self.__positionUpdatingEnabled:
+        if __positionUpdatingEnabled:
             self.__serialCommunicator.transmit(Commands.POS_Z)
             z = self.__serialCommunicator.receive()
             return z
