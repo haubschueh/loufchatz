@@ -22,13 +22,21 @@ class Application:
         self.mainwindow = self.builder.get_object('window', master)
         self.builder.connect_callbacks(self)
 
-        pos = PositionUpdater(self.loufchatz, self)
-        pos.start()
+        self.position = PositionUpdater(self.loufchatz, self)
+        self.position.start()
 
     def on_Run_clicked(self):
-        self.loufchatz.driveSlow()
-        time.sleep(3.2)
+        self.position.disableUpdatingPosition()
+        time.sleep(.300)
+        self.loufchatz.waitForStart()
+        self.loufchatz.waitForCube()
+        self.position.enableUpdatingPosition()
+        self.loufchatz.drive()
+        self.loufchatz.searchTargetPlate()
+        time.sleep(2.7)
         self.loufchatz.stop()
+        time.sleep(.300)
+        self.loufchatz.finish()
 
     def updatePosition(self, X, Z):
         TextFieldX = self.builder.get_object('PosX')
@@ -80,7 +88,6 @@ class Application:
 
     def on_Reset_clicked(self):
         self.loufchatz.reset()
-
 
 if __name__ == '__main__':
     root = tk.Tk()
