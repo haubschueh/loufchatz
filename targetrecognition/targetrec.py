@@ -64,7 +64,6 @@ class TargetRec:
                 if square[i][k] < low_point_y and k == 1:
                     low_point_y = square[i][k]
 
-
                 if square[i][k] > max_point_x and k==0:
                     max_point_x = square[i][k]
                 if square[i][k] > max_point_y and k == 1:
@@ -84,11 +83,6 @@ class TargetRec:
         frame = self.last_frame
         cv2.circle(frame, (low_point_x, low_point_y), 2, (0, 0, 255), -1)
         cv2.circle(frame, (max_point_x, max_point_y), 2, (0, 0, 255), -1)
-        # Temp Test:
-        #cv2.circle(frame, (p1[0], p1[1]), 2, (0, 0, 255), -1)
-        #cv2.circle(frame, (p2[0], p2[1]), 2, (0, 0, 255), -1)
-        #cv2.circle(frame, (p3[0], p3[1]), 2, (0, 0, 255), -1)
-        #cv2.circle(frame, (p4[0], p4[1]), 2, (0, 0, 255), -1)
 
         cv2.imshow("Show Points Square Area", frame)
 
@@ -97,7 +91,6 @@ class TargetRec:
     def getSquareArea(self):
         index = len(self.target)
         square = self.target[index-1]
-
 
         low_point_x = 50000
         low_point_y = 50000
@@ -110,12 +103,10 @@ class TargetRec:
                 if square[i][k] < low_point_y and k == 1:
                     low_point_y = square[i][k]
 
-
                 if square[i][k] > max_point_x and k==0:
                     max_point_x = square[i][k]
                 if square[i][k] > max_point_y and k == 1:
                     max_point_y = square[i][k]
-
 
         return low_point_x,low_point_y,max_point_x,max_point_y
 
