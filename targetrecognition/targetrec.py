@@ -11,7 +11,7 @@ class TargetRec:
         self.sc = SquareCheck()
         self.target = 0
         self.last_frame = 0
-        self.videoStream = VideoStream(usePiCamera=True,resolution=(1280,720),framerate=21).start()
+        self.videoStream = VideoStream(resolution=(1280,720),framerate=21).start()
 
     def searchSquare(self):
 
