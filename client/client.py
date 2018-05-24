@@ -2,6 +2,7 @@ import tkinter as tk
 import pygubu
 import os
 import Pyro4
+import time
 from PositionUpdater import PositionUpdater
 
 class Application:
@@ -23,6 +24,11 @@ class Application:
 
         pos = PositionUpdater(self.loufchatz, self)
         pos.start()
+
+    def on_Run_clicked(self):
+        self.loufchatz.driveSlow()
+        time.sleep(3.2)
+        self.loufchatz.stop()
 
     def updatePosition(self, X, Z):
         TextFieldX = self.builder.get_object('PosX')

@@ -108,6 +108,19 @@
             </layout>
           </object>
         </child>
+        <child>
+          <object class="ttk.Button" id="Run">
+            <property name="command">on_Run_clicked</property>
+            <property name="cursor">hand2</property>
+            <property name="image">run.gif</property>
+            <layout>
+              <property name="column">4</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="rowspan">4</property>
+            </layout>
+          </object>
+        </child>
       </object>
     </child>
     <child>
