@@ -2,7 +2,7 @@ import threading
 from communication.FreedomInterface import FreedomInterface
 
 class BeginLogic(threading.Thread):
-    def __init__(self, remoteClass, userInterface):
+    def __init__(self):
         threading.Thread.__init__(self)
         self.letsGo = False
 
