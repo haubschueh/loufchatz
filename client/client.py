@@ -26,8 +26,8 @@ class Application:
         self.position.start()
 
     def on_Run_clicked(self):
-        self.position.disableUpdatingPosition()
-        time.sleep(.300)
+        #self.position.disableUpdatingPosition()
+        #time.sleep(.300)
         self.loufchatz.waitForStart()
         self.loufchatz.waitForCube()
         self.position.enableUpdatingPosition()
