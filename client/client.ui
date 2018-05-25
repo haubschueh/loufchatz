@@ -108,19 +108,6 @@
             </layout>
           </object>
         </child>
-        <child>
-          <object class="ttk.Button" id="Run">
-            <property name="command">on_Run_clicked</property>
-            <property name="cursor">hand2</property>
-            <property name="image">run.gif</property>
-            <layout>
-              <property name="column">4</property>
-              <property name="propagate">True</property>
-              <property name="row">1</property>
-              <property name="rowspan">4</property>
-            </layout>
-          </object>
-        </child>
       </object>
     </child>
     <child>
@@ -138,7 +125,7 @@
             <property name="image">left3.gif</property>
             <layout>
               <property name="column">0</property>
-              <property name="padx">5</property>
+              <property name="padx">8</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
             </layout>
@@ -151,7 +138,7 @@
             <property name="image">left2.gif</property>
             <layout>
               <property name="column">1</property>
-              <property name="padx">5</property>
+              <property name="padx">8</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
             </layout>
@@ -164,7 +151,7 @@
             <property name="image">left1.gif</property>
             <layout>
               <property name="column">2</property>
-              <property name="padx">5</property>
+              <property name="padx">8</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
             </layout>
@@ -177,7 +164,7 @@
             <property name="image">stop.gif</property>
             <layout>
               <property name="column">3</property>
-              <property name="padx">5</property>
+              <property name="padx">8</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
             </layout>
@@ -190,7 +177,7 @@
             <property name="image">right1.gif</property>
             <layout>
               <property name="column">4</property>
-              <property name="padx">5</property>
+              <property name="padx">8</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
             </layout>
@@ -203,7 +190,7 @@
             <property name="image">right2.gif</property>
             <layout>
               <property name="column">5</property>
-              <property name="padx">5</property>
+              <property name="padx">8</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
             </layout>
@@ -216,7 +203,7 @@
             <property name="image">right3.gif</property>
             <layout>
               <property name="column">6</property>
-              <property name="padx">5</property>
+              <property name="padx">8</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
             </layout>
@@ -354,11 +341,37 @@
           </object>
         </child>
         <child>
+          <object class="ttk.Button" id="Position">
+            <property name="command">on_Position_clicked</property>
+            <property name="cursor">hand2</property>
+            <property name="image">position.gif</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="Run">
+            <property name="command">on_Run_clicked</property>
+            <property name="cursor">hand2</property>
+            <property name="image">run.gif</property>
+            <layout>
+              <property name="column">3</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
           <object class="tk.Label" id="SystemControlLabel">
             <property name="text" translatable="yes">SystemControl</property>
             <layout>
               <property name="column">0</property>
-              <property name="columnspan">2</property>
+              <property name="columnspan">4</property>
               <property name="propagate">True</property>
               <property name="row">0</property>
             </layout>

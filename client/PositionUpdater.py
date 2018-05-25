@@ -16,8 +16,8 @@ class PositionUpdater(threading.Thread):
                 self.gui.updatePosition(x, z)
                 time.sleep(.250)
 
-    def disableUpdatingPosition(self):
-        self.updatePosition = False
+    def getUpdatingPosition(self):
+        return self.updatePosition
 
-    def enableUpdatingPosition(self):
-        self.updatePosition = True
+    def setUpdatingPosition(self, value):
+        self.updatePosition = value

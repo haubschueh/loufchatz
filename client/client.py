@@ -47,6 +47,9 @@ class Application:
         TextFieldZ.insert(tk.INSERT, Z)
         self.master.update()
 
+    def on_Position_clicked(self):
+        self.position.setUpdatingPosition(not(self.position.getUpdatingPosition()))
+
     def on_BackwardFast_clicked(self):
         self.loufchatz.driveBackwardFast()
 
