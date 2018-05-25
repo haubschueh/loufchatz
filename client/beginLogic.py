@@ -4,6 +4,7 @@ from communication.FreedomInterface import FreedomInterface
 class BeginLogic(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
+        self.__FreedomInterface = FreedomInterface.getInstance()
         self.letsGo = False
 
     def run(self):
