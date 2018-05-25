@@ -26,11 +26,10 @@ class Application:
         self.position.start()
 
     def on_Run_clicked(self):
-        #self.position.disableUpdatingPosition()
-        #time.sleep(.300)
-        self.loufchatz.waitForStart()
-        self.loufchatz.waitForCube()
-        self.position.enableUpdatingPosition()
+        self.loufchatz.startRun()
+        while(not(self.loufchatz.letsGo())):
+            time.sleep(.1)
+        self.position.setUpdatingPosition(True)
         self.loufchatz.drive()
         self.loufchatz.searchTargetPlate()
         time.sleep(2.7)
