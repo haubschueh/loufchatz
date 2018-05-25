@@ -10,14 +10,14 @@ class PositionUpdater(threading.Thread):
 
     def run(self):
         while True:
-            if updatePosition:
+            if self.updatePosition:
                 x = self.loufchatz.getCubePositionX()
                 z = self.loufchatz.getCubePositionZ()
                 self.gui.updatePosition(x, z)
                 time.sleep(.250)
 
-    def disableUpdatingPosition():
+    def disableUpdatingPosition(self):
         self.updatePosition = False
 
-    def enableUpdatingPosition():
+    def enableUpdatingPosition(self):
         self.updatePosition = True

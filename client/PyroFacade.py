@@ -10,16 +10,16 @@ class PyroFacade:
         self.__FreedomInterface = FreedomInterface.getInstance()
         self.targetRec = TargetRec()
 
-    def searchTargetPlate():
+    def searchTargetPlate(self):
         self.targetRec.searchSquare()
 
-    def waitForStart():
+    def waitForStart(self):
         self.__FreedomInterface.waitForStart()
 
-    def waitForCube():
+    def waitForCube(self):
         self.__FreedomInterface.waitForCube()
 
-    def finish():
+    def finish(self):
         self.__FreedomInterface.finish()
 
     def getCubePositionX(self):
