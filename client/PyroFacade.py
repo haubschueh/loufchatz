@@ -1,5 +1,5 @@
 from communication.FreedomInterface import FreedomInterface
-from targetrecognition.targetrec import TargetRec
+#from targetrecognition.targetrec import TargetRec
 from client.beginLogic import BeginLogic
 import Pyro4
 
@@ -9,23 +9,23 @@ class PyroFacade:
 
     def __init__(self):
         self.__FreedomInterface = FreedomInterface.getInstance()
-        self.targetRec = TargetRec()
-        self.beginLogic = BeginLogic()
+        #self.targetRec = TargetRec()
+        #self.beginLogic = BeginLogic()
 
-    def searchTargetPlate(self):
-        self.targetRec.searchSquare()
+    #def searchTargetPlate(self):
+        #self.targetRec.searchSquare()
 
-    def startRun(self):
-        self.beginLogic.start()
+    #def startRun(self):
+        #self.beginLogic.start()
 
-    def letsGo(self):
-        return self.beginLogic.getLetsGo()
+    #def letsGo(self):
+        #return self.beginLogic.getLetsGo()
 
-    def waitForCube(self):
-        self.__FreedomInterface.waitForCube()
+    #def waitForCube(self):
+        #self.__FreedomInterface.waitForCube()
 
-    def finish(self):
-        self.__FreedomInterface.finish()
+    #def finish(self):
+        #self.__FreedomInterface.finish()
 
     def getCubePositionX(self):
         x = self.__FreedomInterface.getCubePositionX()
