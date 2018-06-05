@@ -3,6 +3,7 @@ from communication.FreedomInterface import FreedomInterface
 from targetrecognition.targetrec import TargetRec
 from client.ClientInterface import ClientInterface
 from position.position import PositionUpdater
+from client.PyroFacade import PyroFacade
 import time
 
 """

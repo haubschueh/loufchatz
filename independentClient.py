@@ -1,4 +1,5 @@
 from client.ClientInterface import ClientInterface
+from client.PyroFacade import PyroFacade
 import time
 
 pyroFacade = PyroFacade()
