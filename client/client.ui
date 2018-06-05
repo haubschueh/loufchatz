@@ -354,24 +354,11 @@
           </object>
         </child>
         <child>
-          <object class="ttk.Button" id="Run">
-            <property name="command">on_Run_clicked</property>
-            <property name="cursor">hand2</property>
-            <property name="image">run.gif</property>
-            <layout>
-              <property name="column">3</property>
-              <property name="padx">5</property>
-              <property name="propagate">True</property>
-              <property name="row">1</property>
-            </layout>
-          </object>
-        </child>
-        <child>
           <object class="tk.Label" id="SystemControlLabel">
             <property name="text" translatable="yes">SystemControl</property>
             <layout>
               <property name="column">0</property>
-              <property name="columnspan">4</property>
+              <property name="columnspan">3</property>
               <property name="propagate">True</property>
               <property name="row">0</property>
             </layout>

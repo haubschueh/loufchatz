@@ -25,18 +25,6 @@ class Application:
         self.position = PositionUpdater(self.loufchatz, self)
         self.position.start()
 
-    def on_Run_clicked(self):
-        self.loufchatz.startRun()
-        while(not(self.loufchatz.letsGo())):
-            time.sleep(.1)
-        self.position.setUpdatingPosition(True)
-        self.loufchatz.drive()
-        self.loufchatz.searchTargetPlate()
-        time.sleep(2.7)
-        self.loufchatz.stop()
-        time.sleep(.300)
-        self.loufchatz.finish()
-
     def updatePosition(self, X, Z):
         TextFieldX = self.builder.get_object('PosX')
         TextFieldZ = self.builder.get_object('PosZ')
@@ -89,6 +77,7 @@ class Application:
         self.loufchatz.getState()
 
     def on_Reset_clicked(self):
+        self.updatePosition(0, 0)
         self.loufchatz.reset()
 
 if __name__ == '__main__':
