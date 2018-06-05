@@ -28,7 +28,7 @@ freedomBoard.driveFast()
 positionUpdater.start()
 targetRec.searchSquare()
 #short 1.2
-timeToWait = 164*pyroFacade.__X-153
+timeToWait = 164*pyroFacade.getX()-153
 print('Wait %s', timeToWait)
 time.sleep(timeToWait)
 #long 2.6

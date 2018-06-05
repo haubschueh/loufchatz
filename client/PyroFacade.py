@@ -29,6 +29,9 @@ class PyroFacade:
     #def finish(self):
         #self.__FreedomInterface.finish()
 
+    def getX(self):
+        return self.__X
+
     def setX(self, newVar):
         self.__X = newVar
 
