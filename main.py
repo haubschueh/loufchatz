@@ -27,10 +27,11 @@ freedomBoard.waitForCube()
 freedomBoard.driveFast()
 positionUpdater.start()
 targetRec.searchSquare()
-#short 1.6
-#middle 1.9
-time.sleep(1.9)
-#long 2.4
+#short 1.2
+timeToWait = 164*pyroFacade.__X-153
+print('Wait %s', timeToWait)
+time.sleep(timeToWait)
+#long 2.6
 freedomBoard.stop()
 time.sleep(.300)
 positionUpdater.stop()
