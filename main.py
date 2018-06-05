@@ -29,7 +29,7 @@ positionUpdater.start()
 targetRec.searchSquare()
 #short 1.2
 X = pyroFacade.getX()
-timeToWait = 0.005 * int(X) + 0.9
+timeToWait = 0.006 * int(X) + 0.85
 print('Wait %s', timeToWait)
 time.sleep(timeToWait)
 #long 2.6
