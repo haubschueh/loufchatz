@@ -1,7 +1,8 @@
 from client.ClientInterface import ClientInterface
 import time
 
-clientInterface = ClientInterface()
+pyroFacade = PyroFacade()
+clientInterface = ClientInterface(pyroFacade)
 uri = clientInterface.getUri()
 clientInterface.start()
 print('Client uri is: %s', uri)
