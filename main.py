@@ -29,13 +29,14 @@ positionUpdater.start()
 targetRec.searchSquare()
 #short 1.2
 X = pyroFacade.getX()
-timeToWait = 164 * X - 153
+timeToWait = 0.005 * int(X) + 0.9
 print('Wait %s', timeToWait)
 time.sleep(timeToWait)
 #long 2.6
 freedomBoard.stop()
-time.sleep(.300)
 positionUpdater.stop()
+pyroFacade.setZ(4)
+time.sleep(.300)
 freedomBoard.finish()
 log.info('Run finished.')
 log.info('Raspi goes to sleep.')
