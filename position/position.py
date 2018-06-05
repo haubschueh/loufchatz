@@ -14,15 +14,15 @@ class PositionUpdater(threading.Thread):
         self.client = client
         x = self.freedomBoard.getCubePositionX()
         z = self.freedomBoard.getCubePositionZ()
-        client.setX(x)
-        client.setZ(z)
+        self.client.setX(x)
+        self.client.setZ(z)
 
     def run(self):
         while(self.alive):
             x = self.freedomBoard.getCubePositionX()
             z = self.freedomBoard.getCubePositionZ()
-            client.setX(x)
-            client.setZ(z)
+            self.client.setX(x)
+            self.client.setZ(z)
             time.sleep(0.1)
 
     def stop(self):

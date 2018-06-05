@@ -6,7 +6,10 @@ class PositionUpdater(threading.Thread):
         threading.Thread.__init__(self)
         self.loufchatz = remoteClass
         self.gui = userInterface
-        self.updatePosition = False
+        self.updatePosition = True
+        x = self.loufchatz.getCubePositionX()
+        z = self.loufchatz.getCubePositionZ()
+        self.gui.updatePosition(x, z)
 
     def run(self):
         while True:
