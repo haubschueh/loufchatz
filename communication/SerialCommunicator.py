@@ -45,10 +45,10 @@ class SerialCommunicator:
             answer += nextchar
             lasttwo = lasttwo[1::] + nextchar
             if lasttwo == Commands.END_SIGN:
-                self.__log.debug('Received \'%s\'', answer[:-1:])
+                #self.__log.debug('Received \'%s\'', answer[:-1:])
                 return answer[:-1:]
 
     def transmit(self, command):
         self.__port.reset_input_buffer()
         self.__port.write((command+Commands.END_SIGN).encode(self.__ENCODING))
-        self.__log.debug('Sent \'%s\'', command)
+        #self.__log.debug('Sent \'%s\'', command)
