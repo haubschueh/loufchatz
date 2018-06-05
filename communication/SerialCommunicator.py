@@ -1,6 +1,6 @@
+from communication.Language import Commands
 from log.LoggerFactory import LoggerFactory
 import serial
-from communication.Language import Commands
 
 """
 Base implementation of the serial communication
@@ -9,11 +9,11 @@ Initialisation example:
 >> frdm = SerialCommunicator.getInstance()
 """
 class SerialCommunicator:
-    # Here will be the instance stored.
     __instance = None
     __port = None
     __ENCODING = 'utf-8'
     __log = LoggerFactory.getLogger('SerialCommunicator')
+    __buffer = []
 
     # Settings for the serial port
     __PORT = '/dev/serial0'
