@@ -6,6 +6,8 @@ import Pyro4
 @Pyro4.expose
 class PyroFacade:
     __FreedomInterface = None
+    __X = -1
+    __Z = -1
 
     def __init__(self):
         self.__FreedomInterface = FreedomInterface.getInstance()
@@ -27,12 +29,24 @@ class PyroFacade:
     #def finish(self):
         #self.__FreedomInterface.finish()
 
+    def setX(self, newVar):
+        self.__X = newVar
+
+    def setZ(self, newVar):
+        self.__Z = newVar
+
     def getCubePositionX(self):
-        x = self.__FreedomInterface.getCubePositionX()
+        if self.__X == -1:
+            x = self.__FreedomInterface.getCubePositionX()
+        else:
+            x = self.__X
         return x
 
     def getCubePositionZ(self):
-        z = self.__FreedomInterface.getCubePositionZ()
+        if self.__Z == -1:
+            z = self.__FreedomInterface.getCubePositionZ()
+        else:
+            z = self.__Z
         return z
 
     def getState(self):
