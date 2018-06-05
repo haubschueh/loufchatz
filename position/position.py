@@ -12,9 +12,6 @@ class PositionUpdater(threading.Thread):
         threading.Thread.__init__(self)
         self.freedomBoard = frdm
         self.client = client
-        self.update()
-
-    def update(self):
         x = self.freedomBoard.getCubePositionX()
         z = self.freedomBoard.getCubePositionZ()
         client.setX(x)
@@ -22,7 +19,10 @@ class PositionUpdater(threading.Thread):
 
     def run(self):
         while(self.alive):
-            self.update()
+            x = self.freedomBoard.getCubePositionX()
+            z = self.freedomBoard.getCubePositionZ()
+            client.setX(x)
+            client.setZ(z)
             time.sleep(0.1)
 
     def stop(self):
